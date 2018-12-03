@@ -19,7 +19,7 @@ deploy to production:
   environment: production
   only:
     - master
-  script: git-push dokku@dokku.me:myapp
+  script: puskerit dokku@dokku.me:myapp
 ```
 
 Go to GitLab > Project > Settings > CI/CD > Secret Variables, and add a variable `SSH_PRIVATE_KEY`:
@@ -32,16 +32,16 @@ Go to GitLab > Project > Settings > CI/CD > Secret Variables, and add a variable
 
 ### Pushing to a branch other than master
 
-By default, `git-push` will push to branch `master` of a remote repository (that's what Dokku wants). You can override this with:
+By default, `puskerit` will push to branch `master` of a remote repository (that's what Dokku wants). You can override this with:
 
 ```console
-git-push user@git.host:repo branch
+puskerit user@git.host:repo branch
 ```
 
 ### Pushing to Git running on a non-standard port
 
 ```console
-git-push ssh://dokku@dokku.me:8022/myapp
+puskerit ssh://dokku@dokku.me:8022/myapp
 ```
 
 ### Not doing force push
